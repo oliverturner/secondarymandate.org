@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --tint-primary: #993333;
+
+  --user-font-size: 14px;
+  --user-font-scale: calc(1rem - var(--user-font-size));
+
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: var(--user-font-size);
+}
+
+body {
+  display: grid;
+  align-items: start;
+  gap: 1rem;
+
+  max-width: 80ch;
+  margin: auto;
+  padding: 0 1.5rem;
+  font-size: clamp(
+    0.875rem,
+    0.4626rem + 1.0309vw + var(--user-font-scale),
+    1rem
+  );
+}
+
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: 232px 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: var(--tint-primary);
+}
+
+a {
+  color: inherit;
+}
