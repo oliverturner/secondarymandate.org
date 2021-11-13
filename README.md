@@ -4,20 +4,7 @@ A viable method of democratic Lords reform
 
 ## 🚀 Project Structure
 
-```
-/
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Tour.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Any static assets, like images, can be placed in the `public/` directory.
+Any static assets are placed in the `public/` directory.
 
 ## 🧞 Commands
 
