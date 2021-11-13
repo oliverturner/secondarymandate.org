@@ -1,7 +1,6 @@
 <div class="navigation">
-  <a href="/" title="Home">
+  <a href="/" title="Home" class="logo">
     <img
-      class="logo"
       src="/images/houseoflords.jpg"
       alt="The House of Lords"
       width="232"
@@ -15,33 +14,77 @@
     <a href="/links/">News & Links</a>
     <a href="mailto:billybragg@secondarymandate.org" target="_blank">Contact Us</a>
   </nav>
+
+  <button class="navigation__menubtn" data-component="menubtn">Menu</button>
 </div>
 
 <style lang="scss">
   .navigation {
+    --translate: -100%;
+
     display: grid;
-    grid-template-columns: 232px 1fr;
-    align-items: center;
-    align-content: start;
+    grid-template-rows: 230px 1fr;
+    align-items: start;
     gap: 1rem;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: max-content;
+    height: 100%;
+    transform: translateX(var(--translate));
+    background: white;
+    transition: transform 0.5s ease-in-out;
+
+    :global(.menu-open) & {
+      --translate: 0;
+    }
+
     @media (min-width: 768px) {
-      grid-template-columns: 1fr;
+      --translate: 0;
+      position: static;
     }
   }
 
-  .logo {
+  .navigation__menubtn {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0;
+    font-size: 1.125rem;
+    cursor: pointer;
+    background: var(--tint-primary);
+    color: white;
+
+    @media (min-width: 960px) {
+      display: none;
+    }
+  }
+
+  .logo img {
     display: block;
-    width: 232px;
-    height: 230px;
+    width: 100%;
+    aspect-ratio: 1;
+
+    @media (min-width: 768px) {
+      width: 232px;
+    }
   }
 
   .links {
     display: grid;
     gap: 1rem;
 
+    padding: 1rem;
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
+
     & a {
-      --wh: 0.8rem;
+      --wh: 0.6rem;
 
       display: flex;
       align-items: center;
