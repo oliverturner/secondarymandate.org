@@ -1,4 +1,5 @@
 ---
+title: Links
 layout: ../layouts/base.astro
 ---
 # Links
