@@ -1,11 +1,13 @@
 <div class="navigation">
-  <img
-    class="logo"
-    src="/images/houseoflords.jpg"
-    alt="The House of Lords"
-    width="232"
-    height="230"
-  />
+  <a href="/" title="Home">
+    <img
+      class="logo"
+      src="/images/houseoflords.jpg"
+      alt="The House of Lords"
+      width="232"
+      height="230"
+    />
+  </a>
   <nav class="links">
     <a href="/how/">How it works</a>
     <a href="/about/">About This Campaign</a>
@@ -39,7 +41,7 @@
     gap: 1rem;
 
     & a {
-      --wh: 1rem;
+      --wh: 0.8rem;
 
       display: flex;
       align-items: center;

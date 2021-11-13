@@ -1,4 +1,5 @@
 ---
+title: How It Works
 layout: ../layouts/base.astro
 ---
 # How It Works

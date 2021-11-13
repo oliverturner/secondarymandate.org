@@ -10,5 +10,8 @@
     "dev": "astro dev",
     "preview": "astro preview",
     "start": "astro dev"
+  },
+  "dependencies": {
+    "sanitize.css": "13.0.0"
   }
 }

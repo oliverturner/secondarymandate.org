@@ -1,4 +1,5 @@
 ---
+title: Home
 layout: ../layouts/base.astro
 ---
 > "We need to ask where we go next on constitutional reform, how to re-engage people in our democracy, how to renew local government, and how to strengthen civil society. And, because politics is fundamentally about what government does, we need to ask questions about how government itself needs to adapt to the challenges of the modern world."

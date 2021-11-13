@@ -1,4 +1,5 @@
 ---
+title: Frequently Asked Questions
 layout: ../layouts/base.astro
 ---
 # Frequently Asked Questions

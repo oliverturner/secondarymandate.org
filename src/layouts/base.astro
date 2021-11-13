@@ -1,26 +1,31 @@
 ---
 import Nav from "../components/nav.svelte"
-// You can import components from any supported Framework here!
 
-
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 const {title} = Astro.props;
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>{title}</title>
+  <title>{title} - The Secondary Mandate</title>
 
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="/style/global.css">
+  <link rel="stylesheet" href={Astro.resolve("../styles/global.css")}>
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@billybragg">
+  <meta name="twitter:creator" content="@oliverturner">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="https://secondarymandate.oliverturner.cloud/assets/opengraph.png">
 </head>
 <body class="app">
   <div class="app__nav">
@@ -35,6 +40,10 @@ const {title} = Astro.props;
       <p class="header__strapline">A viable method of democratic Lords reform</p>
     </header>
     <slot />
+
+    <footer class="footer">
+      Design by twobrowngirls.com
+    </footer>
   </main>
 </body>
 </html>
@@ -55,6 +64,10 @@ const {title} = Astro.props;
       "image title"
       "image strapline";
     gap: 1rem;
+
+    @media (min-width: 768px) {
+      margin-top: 2rem;
+    }
   }
 
   .header__image {
@@ -77,5 +90,13 @@ const {title} = Astro.props;
 
     margin: 0;
     font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--tint-primary)
+  }
+
+  .footer {
+    margin-top: 3.5rem;
+    padding: 1rem;
+    text-align: center;
   }
 </style>
