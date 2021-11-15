@@ -38,9 +38,11 @@ const { title } = content;
 
   <main class="app__content">
     <header class="content__header">
-      <img class="header__image" src="/images/ballot_box.jpg" alt="A ballot box" width="80" height="127">
+      <a class="header__image" href="/">
+        <img src="/images/ballot_box.jpg" alt="A ballot box" width="80" height="127">
+      </a>
 
-      <h3 class="header__title">The Secondary Mandate</h3>
+      <h3 class="header__title"><a href="/">The Secondary Mandate</a></h3>
       <p class="header__strapline">A viable method of democratic Lords reform</p>
     </header>
 
@@ -53,13 +55,7 @@ const { title } = content;
     </footer>
   </main>
 
-  <script>
-    const root = document.querySelector(":root");
-    const menubtn = document.querySelector("[data-component='menubtn']");
-    menubtn.addEventListener("click", () => {
-      root.classList.toggle("menu-open");
-    });
-  </script>
+  <script src="/js/app.js"></script>
 </body>
 </html>
 
@@ -158,6 +154,10 @@ const { title } = content;
 
     margin: 0;
     font-size: 1.5rem;
+
+    & a {
+      text-decoration: none;
+    }
   }
 
   .header__strapline {
