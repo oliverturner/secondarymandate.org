@@ -37,26 +37,25 @@ const { title } = content;
   </div>
 
   <main class="app__content">
-    <header class="header">
-      <img class="header__image" src="/images/ballot_box.jpg" alt="A ballot box" width="80" height="127">
+    <header class="content__header">
+      <a class="header__image" href="/">
+        <img src="/images/ballot_box.jpg" alt="A ballot box" width="80" height="127">
+      </a>
 
-      <h3 class="header__title">The Secondary Mandate</h3>
+      <h3 class="header__title"><a href="/">The Secondary Mandate</a></h3>
       <p class="header__strapline">A viable method of democratic Lords reform</p>
     </header>
-    <slot />
 
-    <footer class="footer">
+    <div class="content__body">
+      <slot />
+    </div>
+
+    <footer class="content__footer">
       Design by twobrowngirls.com
     </footer>
   </main>
 
-  <script>
-    const root = document.querySelector(":root");
-    const menubtn = document.querySelector("[data-component='menubtn']");
-    menubtn.addEventListener("click", () => {
-      root.classList.toggle("menu-open");
-    });
-  </script>
+  <script src="/js/app.js"></script>
 </body>
 </html>
 
@@ -65,11 +64,10 @@ const { title } = content;
     display: grid;
     grid-template-columns: 0 1fr;
     align-items: start;
-    gap: 1rem;
 
     max-width: 80ch;
     margin: auto;
-    padding: 1.5rem;
+    padding: 0 1.5rem;
     font-size: clamp(
       0.875rem,
       0.4626rem + 1.0309vw + var(--user-font-scale),
@@ -79,8 +77,7 @@ const { title } = content;
     @media (min-width: 768px) {
       grid-template-columns: 232px 1fr;
       grid-template-rows: 1fr;
-
-      padding: 0 1.5rem;
+      gap: 1rem;
     }
 
     @media (min-width: 960px) {
@@ -98,6 +95,15 @@ const { title } = content;
     }
   }
 
+  .app__content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+
+    min-height: 100vh;
+    padding-top: 1.5rem;
+  }
+
   .app__content::after {
     transition: opacity 1s ease-in-out;
 
@@ -106,7 +112,7 @@ const { title } = content;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.65);
     opacity: 0;
 
     :global(.menu-open) & {
@@ -114,10 +120,14 @@ const { title } = content;
 
       content: "";
       opacity: 1;
+
+      @media (min-width: 768px) {
+        content: none;
+      }
     }
   }
 
-  .header {
+  .content__header {
     display: grid;
     grid-template-columns: 80px 1fr;
     grid-template-rows: auto auto;
@@ -144,6 +154,10 @@ const { title } = content;
 
     margin: 0;
     font-size: 1.5rem;
+
+    & a {
+      text-decoration: none;
+    }
   }
 
   .header__strapline {
@@ -155,8 +169,11 @@ const { title } = content;
     color: var(--tint-primary)
   }
 
-  .footer {
-    margin-top: 3.5rem;
+  .content__body {
+
+  }
+
+  .content__footer {
     padding: 1rem;
     text-align: center;
   }
