@@ -22,6 +22,7 @@
 
 <style lang="scss">
   .navigation {
+    --tint-border: transparent;
     --translate: -100%;
 
     display: grid;
@@ -34,17 +35,25 @@
     left: 0;
     width: 230px;
     height: 100%;
-    transform: translateX(var(--translate));
     background: white;
+
+    transform: translateX(var(--translate));
     transition: transform 0.5s ease-in-out;
 
     :global(.menu-open) & {
+      --tint-border: #fff;
       --translate: 0;
+
+      filter: drop-shadow(0.2rem 0 0.5rem #000a);
     }
 
     @media (min-width: 768px) {
       --translate: 0;
       position: static;
+
+      :global(.menu-open) & {
+        filter: none;
+      }
     }
   }
 
@@ -54,11 +63,18 @@
     left: 100%;
     padding: 0.5rem;
     border: none;
-    border-radius: 0;
-    font-size: 1.125rem;
+    border-radius: 0 0 0.5rem 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     cursor: pointer;
     background: var(--tint-primary);
     color: white;
+
+    :global(.menu-open) & {
+      border-right:  1px solid var(--tint-border);
+      border-bottom: 1px solid var(--tint-border);
+    }
 
     @media (min-width: 960px) {
       display: none;
